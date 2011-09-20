@@ -13,6 +13,9 @@ the cognitive level of the question as specified by the Blooms system based on k
     
     text = coglevel.getText(html)
     bloomlevel = coglevel.getBloomsLevel(text)
+    
+    # get the Bloom's label for the level
+    label = coglev.getBloomLabel(bloomlevel)
 
 
 This is bound to change soon.
