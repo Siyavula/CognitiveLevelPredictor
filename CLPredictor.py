@@ -105,19 +105,19 @@ def getBloomsLevel(text):
         count = sum([text.count(k) for k in keywords])
         
         matches[b] = count
-
+    
+    print matches
     # get the name of the highest count
     highest = 0 
-    
+    level = 0    
     for m in matches.keys():
-        level = 0
+        count = matches[m]
         if matches[m] != 0:
-            level = Blooms_levels[m]
-        
-        if level >= highest:
-            highest = level
+            if count >= highest:
+                highest = count
+                level = Blooms_levels[m]
 
-    return highest
+    return level 
 
 
 
@@ -136,7 +136,8 @@ if __name__ == '__main__':
         text = getText(html)
         level = getBloomsLevel(text) 
         print text
-        print(level) 
+        print(level)
+        print(getBloomsLabel(level))
     
 
 
