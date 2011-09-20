@@ -32,4 +32,7 @@ Blooms_phrases = {
 
 
 
+if __name__ == '__main__':
+    print('Cogntive Level Predictor module ran')
+
 
