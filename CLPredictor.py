@@ -104,18 +104,18 @@ def getBloomsLevel(text):
         
         matches[b] = count
 
-    
     # get the name of the highest count
-    highest = None
+    highest = 0 
     
-    for m in matches.keys():    
-        if matches[m] >= highest:
-            highest = m 
+    for m in matches.keys():
+        level = 0
+        if matches[m] != 0:
+            level = Blooms_levels[m]
+        
+        if level >= highest:
+            highest = level
 
-    if highest == None:
-        return 0
-    else:
-        return Blooms_levels[highest]
+    return highest
 
 
 
@@ -133,6 +133,7 @@ if __name__ == '__main__':
         html = open('test_questions/'+q ,'r').read()
         text = getText(html)
         level = getBloomsLevel(text) 
+        print text
         print(level) 
     
 
