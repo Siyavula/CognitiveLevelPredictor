@@ -34,7 +34,7 @@ Blooms_phrases = {
         }
 
 
-def bloomlevel(bloomlevel):
+def getBloomsLabel(bloomlevel):
     '''Given the Bloom level as a integer or string, return the cognitive level's label as a string'''
     try:
         bloomlevel = int(bloomlevel)
