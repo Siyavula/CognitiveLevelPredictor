@@ -93,12 +93,14 @@ def getBloomsLevel(text):
     ''' Given the question's text as a string, return a predicted value for the Bloom's cognitive value based upon matches to the keywords'''
 
     matches = {}
+    # split the text so we can match whole words
+    text = text.split(' ') 
 
 
     # for every bloom level
     for b in Blooms_levels.keys():
         keywords = Blooms_phrases[b]
-        
+
         # count the occurence of each keyword in the text
         count = sum([text.count(k) for k in keywords])
         
